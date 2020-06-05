@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+}
+
+
+html,body{
+    margin: 0; 
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#hello{
+  height: 500px;
+    background: url(./image/hello.jpg);
+    background-size: cover;
+
+}
+
+.container{
+    width: 100%;
+margin:0 ;
+padding: auto;
+}
+
+header{
+    padding: 30px;
+}
+header #logo{
+
+    height: 60px;
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    font-size: 2.9em;
+}
+
+h2{
+    color: white;
+    font-weight: 300;
+    text-align: center;
+}
+input[type=url]{
+    border-radius: 3.5px;
+    box-shadow: 2px 2px 2px 0 rbga(0,0,0,0.4);
+    padding: 17px 30px;
+    border: none;
+    width:50%;
+    font-size: 1.3em;
+}
+input[type=submit]{
+    cursor: pointer;
+    border-radius: 3.5px;
+    box-shadow: 2px 2px 2px 0 rbga(0,0,0,0.2);
+    padding: 17px 30px;
+    border: none;
+    font-size: 1.3em;
+    background: #ee6123;
+    color: white;
+    font-weight: 700;
+}
+
+form{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.brands{
+    background: #eff7fc;
+    padding: 30px;
+    text-align: center;
+}
+
+h3{
+    margin: 0;
+    color: #ee6123;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+}
+
+img{
+   margin: 15px;
+    height: 35px;
+}
+
+#result{
+    border: 1px solid white ;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    padding: 30px;
+    display: inline-block;
+    padding: 30px;
+}
+
+.center{
+    text-align: center;
+    margin: 24px;
+}
