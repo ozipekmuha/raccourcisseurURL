@@ -18,11 +18,11 @@ if (isset($_GET["q"])) {
         }
     }
     $req = $bdd->prepare('SELECT * FROM lien WHERE racourci=?');
-    $req->execute(array($raccourcie)); 
+    $req->execute(array($raccourcie));
 
     while ($result = $req->fetch()) {
         header("location:" . $result['url']);
-// var_dump($result); 
+// var_dump($result);
         exit();
     }
 }
@@ -31,14 +31,14 @@ if (isset($_GET["q"])) {
 if (isset($_POST["url"])) {
 
     $url = $_POST["url"];
-    // filter var renvoi true normalement , mais on veut que sa sexecute au contraire 
+    // filter var renvoi true normalement , mais on veut que sa sexecute au contraire
     if (!filter_var($url, FILTER_VALIDATE_URL)) {
         header("location:../?error=true&message=adresse non valide");
         exit();
     }
     $raccourcie = crypt($url, rand());
 
-    // co bdd: 
+    // co bdd:
     try {
         $bdd = new PDO('mysql:host=localhost;dbname=raccourcieURL;charset=utf8', 'root', '');
     } catch (Exception $e) {
@@ -53,10 +53,10 @@ if (isset($_POST["url"])) {
             header("location:index.php?error=true&message=zdresse deja raccourci");
         }
     }
-    // envoi 
+    // envoi
     $req = $bdd->prepare("INSERT INTO lien(url,racourci)VALUES(?,?)");
     $req->execute(array($url, $raccourcie));
-    header('location: index.php?q=' . $raccourcie);
+    header('location: index.php?short=' . $raccourcie);
 }
 
 ?>
@@ -100,7 +100,7 @@ if (isset($_POST["url"])) {
             ?>
                 <div class="center">
                     <div id="result">
-                        <b>URL raccourcie :</b> http://localhost/?q=<?php echo  htmlspecialchars($_GET["short"]); ?>
+                        <b>URL raccourcie :</b> http://localhost/ubuntu/projet/bitly/?q=<?php echo  htmlspecialchars($_GET["short"]); ?>
                     </div>
                 </div>
             <?php
